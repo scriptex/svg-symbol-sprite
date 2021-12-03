@@ -1,0 +1,124 @@
+{
+	"name": "svg-symbol-sprite",
+	"version": "1.0.0",
+	"description": "A script to generate a symbol sprite from SVG files",
+	"keywords": [
+		"SVG",
+		"sprite",
+		"SVG Sprite",
+		"SVG Sprite Generator"
+	],
+	"homepage": "https://atanas.info/projects/svg-symbol-sprite.html",
+	"bugs": {
+		"url": "https://github.com/scriptex/svg-symbol-sprite/issues",
+		"email": "scriptex.bg@gmail.com"
+	},
+	"engines": {
+		"node": ">=14.0.0"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Atanas Atanasov",
+		"email": "scriptex.bg@gmail.com",
+		"url": "https://atanas.info"
+	},
+	"funding": [
+		{
+			"type": "individual",
+			"url": "https://www.paypal.me/scriptex"
+		},
+		{
+			"type": "patreon",
+			"url": "https://www.patreon.com/atanas"
+		},
+		{
+			"type": "individual",
+			"url": "https://ko-fi.com/scriptex"
+		}
+	],
+	"bin": {
+		"svg-symbol-sprite": "dist/index.js"
+	},
+	"main": "dist/index.js",
+	"repository": "https://github.com/scriptex/svg-symbol-sprite",
+	"scripts": {
+		"build": "tsc",
+		"test": "yarn build && node dist/index.js -i ./assets -c ./svgo.config.js -o ./example/sprite.svg",
+		"release-minor": "release-it minor --ci",
+		"release-patch": "release-it patch --ci",
+		"release-major": "release-it major --ci",
+		"changelog-local": "npx auto-changelog"
+	},
+	"dependencies": {
+		"cheerio": "1.0.0-rc.10",
+		"commander": "8.3.0",
+		"release-it": "14.11.8",
+		"svgo-viewbox": "2.0.4"
+	},
+	"devDependencies": {
+		"@types/cheerio": "^0.22.30",
+		"@types/node": "16.11.11",
+		"@types/svgo": "2.6.0",
+		"tslib": "^2.3.1",
+		"typescript": "4.5.2"
+	},
+	"peerDependencies": {},
+	"browserslist": [],
+	"private": true,
+	"release-it": {
+		"hooks": {
+			"after:release": "yarn changelog-local && git add CHANGELOG.md && git commit -m \"Update CHANGELOG.md with the latest changes\" && git push"
+		},
+		"git": {
+			"changelog": "git log --pretty=format:\"* %s (%h)\" ${from}...${to}",
+			"requireCleanWorkingDir": true,
+			"requireBranch": false,
+			"requireUpstream": false,
+			"requireCommits": false,
+			"addUntrackedFiles": false,
+			"commit": true,
+			"commitMessage": "Release ${version}",
+			"commitArgs": [],
+			"tag": true,
+			"tagName": null,
+			"tagAnnotation": "Release ${version}",
+			"tagArgs": [],
+			"push": true,
+			"pushArgs": [
+				"--follow-tags"
+			],
+			"pushRepo": ""
+		},
+		"npm": {
+			"publish": false,
+			"publishPath": ".",
+			"tag": null,
+			"otp": null,
+			"ignoreVersion": false,
+			"skipChecks": false,
+			"timeout": 10
+		},
+		"github": {
+			"release": false,
+			"releaseName": "Release ${version}",
+			"releaseNotes": null,
+			"preRelease": false,
+			"draft": false,
+			"tokenRef": "GITHUB_TOKEN",
+			"assets": null,
+			"host": null,
+			"timeout": 0,
+			"proxy": null,
+			"skipChecks": false
+		},
+		"gitlab": {
+			"release": false,
+			"releaseName": "Release ${version}",
+			"releaseNotes": null,
+			"tokenRef": "GITLAB_TOKEN",
+			"assets": null,
+			"origin": null,
+			"skipChecks": false
+		}
+	}
+}
