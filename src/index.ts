@@ -17,7 +17,7 @@ const SVG_STYLE = 'style="width: 0; height: 0; visibility: hidden; position: abs
 cli.option('-i, --input [input]', 'Specifies input dir (current dir by default)', '.')
 	.option('-o, --output [output]', 'Specifies output file ("./sprite.svg" by default)', 'sprite.svg')
 	.option('-v, --viewbox [viewbox]', 'Specifies viewBox attribute (parsed by default)', '')
-	.option('-p, --prefix [prefix]', 'Specifies prefix for id attribute (none by default)', 'icon-')
+	.option('-p, --prefix [prefix]', 'Specifies prefix for id attribute ("icon-" by default)', 'icon-')
 	.option('-c, --config [config]', 'Absolute path to the config file for SVGO-ViewBox.', './config/svgo.config.js')
 	.parse(process.argv);
 
