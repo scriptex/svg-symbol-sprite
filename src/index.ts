@@ -1,18 +1,25 @@
 #!/usr/bin/env node
 
-import { exec } from 'child_process';
 import { existsSync, promises as fs } from 'fs';
 import { extname, resolve, basename } from 'path';
 
 import { load } from 'cheerio';
 import { Command } from 'commander';
+import { optimize, loadConfig } from 'svgo';
 
 const { rm, readdir, readFile, writeFile } = fs;
 
 const cli = new Command();
 
 const SVG_PROPS = 'xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"';
-const SVG_STYLE = 'style="width: 0; height: 0; visibility: hidden; position: absolute;"';
+const SVG_STYLE = 'style="width: 0; height: 0; position: absolute;"';
+const DEFAULT_CONFIG = './config/svgo.config.js';
+
+const CHEERIO_OPTIONS = {
+	lowerCaseTags: true,
+	lowerCaseAttributeNames: true,
+	_useHtmlParser2: true
+};
 
 cli.option('-i, --input [input]', 'Specifies input dir (current dir by default)', '.')
 	.option('-o, --output [output]', 'Specifies output file ("./sprite.svg" by default)', 'sprite.svg')
@@ -24,7 +31,7 @@ cli.option('-i, --input [input]', 'Specifies input dir (current dir by default)'
 const { input: INPUT, output: OUTPUT, viewbox: VIEWBOX, prefix: PREFIX, quiet: QUIET, config: CONFIG } = cli.opts();
 
 const onEnd = (): void => console.log(`File ‘${OUTPUT}’ successfully generated.`);
-const getSvg = (content: string) => load(content)('svg').first();
+const getSvg = (content: string) => load(content, CHEERIO_OPTIONS)('svg').first();
 const filterFile = (file: string) => extname(file) === '.svg';
 const processFiles = (files: string[]) => Promise.all(files.filter(filterFile).map(processFile));
 const removeOutput = async () => (existsSync(OUTPUT) ? await rm(OUTPUT) : undefined);
@@ -66,8 +73,18 @@ const onError = (err: Error) => {
 
 removeOutput()
 	.then(readSrcFolder)
-	.then((files: string[]) => {
-		exec(`svgo-viewbox -i ${INPUT} -f ${CONFIG}`);
+	.then(async (files: string[]) => {
+		let svgoConfig = await loadConfig(DEFAULT_CONFIG);
+
+		try {
+			svgoConfig = await loadConfig(CONFIG);
+		} catch (e: any) {
+			console.log('SVG Symbol Sprite: SVGO configuration file not found. Using default SVGO configuration.');
+		}
+
+		for (const file of files) {
+			optimize(file, svgoConfig);
+		}
 
 		return processFiles(files);
 	})
