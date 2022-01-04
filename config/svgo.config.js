@@ -15,6 +15,10 @@ module.exports = {
 		'removeUselessStrokeAndFill',
 		'removeDimensions',
 		{
+			name: 'removeViewBox',
+			enabled: false
+		},
+		{
 			name: 'cleanupIDs',
 			active: true,
 			params: {
