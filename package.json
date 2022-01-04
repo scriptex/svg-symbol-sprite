@@ -1,6 +1,6 @@
 {
 	"name": "svg-symbol-sprite",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "A script to generate a symbol sprite from SVG files",
 	"keywords": [
 		"SVG",
