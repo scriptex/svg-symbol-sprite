@@ -46,18 +46,18 @@ yarn global add svg-symbol-sprite
 | `-i`, `--input`   | Specifies input dir (current dir by default)           |
 | `-o`, `--output`  | Specifies output file ("./sprite.svg" by default)      |
 | `-v`, `--viewbox` | Specifies viewBox attribute (parsed by default)        |
-| `-p`, `--prefix`  | Specifies prefix for id attribute ('icon-' by default) |
-| `-c`, `--config`  | Absolute path to the config file for SVGO-ViewBox.     |
+| `-p`, `--prefix`  | Specifies prefix for id attribute ("icon-" by default) |
+| `-c`, `--config`  | Absolute path to the SVGO config file                  |
 
 ```sh
 Usage: svg-symbol-sprite [options]
 
 Options:
     -i, --input     Specifies input dir (current dir by default)
-    -o, --output    Specifies output file (./sprite.svg by default)
+    -o, --output    Specifies output file ("./sprite.svg" by default)
     -v, --viewbox   Specifies viewBox attribute (parsed by default)
-    -p, --prefix    Specifies prefix for id attribute (icon- by default)
-    -c, --config    Absolute path to the config file for SVGO-ViewBox.
+    -p, --prefix    Specifies prefix for id attribute ("icon-" by default)
+    -c, --config    Absolute path to the SVGO config file
 ```
 
 ## Usage as a package.json script
