@@ -55,7 +55,7 @@
 		"svgo": "2.8.0"
 	},
 	"devDependencies": {
-		"@types/cheerio": "0.22.30",
+		"@types/cheerio": "0.22.31",
 		"@types/node": "17.0.7",
 		"@types/svgo": "2.6.1",
 		"release-it": "14.12.4",
