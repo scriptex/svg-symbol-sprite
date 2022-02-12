@@ -225,10 +225,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/svgo@2.6.1":
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/@types/svgo/-/svgo-2.6.1.tgz#ea012623186ba5319d579d56fed8729a65bfdfa4"
-  integrity sha512-4BfUnd19L25BD2iRyZTNuG4pfL9HBs+rvF7zp5maKhbX42uOpc5prGdBXXmCdHlVZfTWq8pNP/vxQt9v8ACxqQ==
+"@types/svgo@2.6.2":
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/@types/svgo/-/svgo-2.6.2.tgz#97d8be0c50ff0562ed7522ba840149aee1c970e3"
+  integrity sha512-m1SqMc/EDAZ8v0BBX+NmlYytUXtvrMD2/J9LICwnMvAuJwb0GSmACU3XPvcORqE7ghEJA4Mk6NYzpwhQI/biPw==
   dependencies:
     "@types/node" "*"
 
