@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { existsSync, promises as fs } from 'fs';
-import { extname, resolve, basename } from 'path';
+import { join, extname, resolve, basename } from 'path';
 
 import { load } from 'cheerio';
 import { Command } from 'commander';
@@ -13,7 +13,7 @@ const cli = new Command();
 
 const SVG_PROPS = 'xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"';
 const SVG_STYLE = 'style="width: 0; height: 0; position: absolute;"';
-const DEFAULT_CONFIG = './config/svgo.config.js';
+const DEFAULT_CONFIG = join(__dirname, '..', 'config', 'svgo.config.js');
 
 const CHEERIO_OPTIONS = {
 	lowerCaseTags: true,
