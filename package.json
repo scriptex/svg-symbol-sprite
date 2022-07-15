@@ -51,7 +51,7 @@
 	},
 	"dependencies": {
 		"cheerio": "1.0.0-rc.12",
-		"commander": "9.3.0",
+		"commander": "9.4.0",
 		"svgo": "2.8.0"
 	},
 	"devDependencies": {
