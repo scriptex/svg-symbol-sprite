@@ -40,13 +40,13 @@ const readSrcFolder = () => readdir(INPUT);
 const writeDestFile = (content: string) => writeFile(OUTPUT, content, 'utf8');
 const getSpriteContent = (contents: string[]) => `<svg ${SVG_PROPS} ${SVG_STYLE}>${contents.join('')}</svg>`;
 // prettier-ignore
-const getSymbol = (content: string, attrs: Record<string, unknown>) => `<symbol ${getAttributes(attrs)}>${getSvgContent(content)}</symbol>`;
+const getSymbol = (content: string, attrs: Record<string, unknown>) => `<symbol${getAttributes(attrs)}>${getSvgContent(content)}</symbol>`;
 
 const getAttributes = (attrs: Record<string, unknown>) =>
 	Object.keys(attrs).reduce((acc, key) => {
 		const value = attrs[key];
 
-		return value ? `${acc} ${key}='${value}'` : acc;
+		return value ? `${acc} ${key}="${value}"` : acc;
 	}, '');
 
 const wrapFile = (fileName: string, content: string) => {
