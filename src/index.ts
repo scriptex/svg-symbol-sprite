@@ -28,7 +28,7 @@ cli.option('-i, --input [input]', 'Specifies input dir (current dir by default)'
 	.option('-c, --config [config]', 'Absolute path to the SVGO config file', './config/svgo.config.js')
 	.parse(process.argv);
 
-const { input: INPUT, output: OUTPUT, viewbox: VIEWBOX, prefix: PREFIX, quiet: QUIET, config: CONFIG } = cli.opts();
+const { input: INPUT, output: OUTPUT, viewbox: VIEWBOX, prefix: PREFIX, config: CONFIG } = cli.opts();
 
 const onEnd = (): void => console.log(`File ‘${OUTPUT}’ successfully generated.`);
 const getSvg = (content: string) => load(content, CHEERIO_OPTIONS)('svg').first();
