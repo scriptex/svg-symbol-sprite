@@ -14,13 +14,13 @@ module.exports = {
 		'convertStyleToAttrs',
 		'removeUselessStrokeAndFill',
 		'removeDimensions',
+		'cleanupIds',
 		{
 			name: 'removeViewBox',
 			enabled: false
 		},
 		{
-			name: 'cleanupIDs',
-			active: true,
+			name: 'prefixIds',
 			params: {
 				prefix: {
 					toString() {

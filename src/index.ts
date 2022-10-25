@@ -83,7 +83,11 @@ removeOutput()
 		}
 
 		for (const file of files) {
-			optimize(file, svgoConfig);
+			const content = await fs.readFile(join(INPUT, file), {
+				encoding: 'utf-8'
+			});
+
+			optimize(content, svgoConfig);
 		}
 
 		return processFiles(files);
