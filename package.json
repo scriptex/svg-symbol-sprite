@@ -45,7 +45,7 @@
 	},
 	"devDependencies": {
 		"@types/cheerio": "0.22.31",
-		"@types/node": "18.11.8",
+		"@types/node": "18.11.9",
 		"@types/svgo": "2.6.4",
 		"release-it": "15.5.0",
 		"tslib": "2.4.1",
