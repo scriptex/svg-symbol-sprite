@@ -42,13 +42,15 @@ yarn global add svg-symbol-sprite
 
 ## Options
 
-| Argument          | Description                                            |
-| ----------------- | ------------------------------------------------------ |
-| `-i`, `--input`   | Specifies input dir (current dir by default)           |
-| `-o`, `--output`  | Specifies output file ("./sprite.svg" by default)      |
-| `-v`, `--viewbox` | Specifies viewBox attribute (parsed by default)        |
-| `-p`, `--prefix`  | Specifies prefix for id attribute ("icon-" by default) |
-| `-c`, `--config`  | Absolute path to the SVGO config file                  |
+| Argument          | Description                           | Default value                              |
+| ----------------- | ------------------------------------- | ------------------------------------------ |
+| `-i`, `--input`   | Specifies input dir                   | "." (current directory)                    |
+| `-o`, `--output`  | Specifies output file                 | "./sprite.svg"                             |
+| `-v`, `--viewbox` | Specifies viewBox attribute           | (parsed from each icon)                    |
+| `-p`, `--prefix`  | Specifies prefix for id attribute     | "icon-"                                    |
+| `-c`, `--config`  | Absolute path to the SVGO config file | -                                          |
+| `-a`, `--attrs`   | Attributes for the SVG element        | "aria-hidden="true""                       |
+| `-s`, `--style`   | Inline style for the SVG element      | "width: 0; height: 0; position: absolute;" |
 
 ```sh
 Usage: svg-symbol-sprite [options]
@@ -59,6 +61,8 @@ Options:
     -v, --viewbox   Specifies viewBox attribute (parsed by default)
     -p, --prefix    Specifies prefix for id attribute ("icon-" by default)
     -c, --config    Absolute path to the SVGO config file
+    -a, --attrs     Attributes for the SVG element
+    -s, --style     Inline style for the SVG element
 ```
 
 ## Usage as a package.json script

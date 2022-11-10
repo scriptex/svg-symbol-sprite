@@ -11,8 +11,8 @@ const { rm, readdir, readFile, writeFile } = fs;
 
 const cli = new Command();
 
-const SVG_PROPS = 'xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true"';
-const SVG_STYLE = 'style="width: 0; height: 0; position: absolute;"';
+const SVG_PROPS = 'xmlns="http://www.w3.org/2000/svg" aria-hidden="true"';
+const SVG_STYLE = 'width: 0; height: 0; position: absolute;';
 const DEFAULT_CONFIG = join(__dirname, '..', 'config', 'svgo.config.js');
 
 const CHEERIO_OPTIONS = {
@@ -26,9 +26,19 @@ cli.option('-i, --input [input]', 'Specifies input dir (current dir by default)'
 	.option('-v, --viewbox [viewbox]', 'Specifies viewBox attribute (parsed by default)', '')
 	.option('-p, --prefix [prefix]', 'Specifies prefix for id attribute ("icon-" by default)', 'icon-')
 	.option('-c, --config [config]', 'Absolute path to the SVGO config file', './config/svgo.config.js')
+	.option('-a, --attrs [attributes]', 'Attributes for the SVG element', SVG_PROPS)
+	.option('-s, --style [style]', 'Inline style for the SVG element', SVG_STYLE)
 	.parse(process.argv);
 
-const { input: INPUT, output: OUTPUT, viewbox: VIEWBOX, prefix: PREFIX, config: CONFIG } = cli.opts();
+const {
+	input: INPUT,
+	output: OUTPUT,
+	viewbox: VIEWBOX,
+	prefix: PREFIX,
+	config: CONFIG,
+	attrs: ATTRS,
+	style: STYLE
+} = cli.opts();
 
 const onEnd = (): void => console.log(`File ‘${OUTPUT}’ successfully generated.`);
 const getSvg = (content: string) => load(content, CHEERIO_OPTIONS)('svg').first();
@@ -38,7 +48,7 @@ const removeOutput = async () => (existsSync(OUTPUT) ? await rm(OUTPUT) : undefi
 const getSvgContent = (content: string) => getSvg(content).html();
 const readSrcFolder = () => readdir(INPUT);
 const writeDestFile = (content: string) => writeFile(OUTPUT, content, 'utf8');
-const getSpriteContent = (contents: string[]) => `<svg ${SVG_PROPS} ${SVG_STYLE}>${contents.join('')}</svg>`;
+const getSpriteContent = (contents: string[]) => `<svg ${ATTRS} style="${STYLE}">${contents.join('')}</svg>`;
 // prettier-ignore
 const getSymbol = (content: string, attrs: Record<string, unknown>) => `<symbol${getAttributes(attrs)}>${getSvgContent(content)}</symbol>`;
 

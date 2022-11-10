@@ -26,7 +26,7 @@
 	},
 	"scripts": {
 		"build": "tsc --skipLibCheck",
-		"test": "yarn build && node dist/index.js -i ./assets -c ./svgo.config.js -o ./example/sprite.svg",
+		"test": "ts-node test/index.ts",
 		"release-minor": "release-it minor --ci",
 		"release-patch": "release-it patch --ci",
 		"release-major": "release-it major --ci",
@@ -46,7 +46,12 @@
 	"devDependencies": {
 		"@types/cheerio": "0.22.31",
 		"@types/node": "18.11.9",
+		"@types/svg-parser": "2.0.3",
+		"@types/tape": "4.13.2",
 		"release-it": "15.5.0",
+		"svg-parser": "2.0.4",
+		"tape": "5.6.1",
+		"ts-node": "10.9.1",
 		"tslib": "2.4.1",
 		"typescript": "4.8.4"
 	},
