@@ -7,7 +7,7 @@ import { parse, ElementNode } from 'svg-parser';
 
 const command = async (args: string): Promise<ElementNode | ExecException> =>
 	new Promise((onSuccess, onError) => {
-		exec(`yarn build && node dist/index.js -i assets -o example/sprite.svg ${args}`, async error => {
+		exec(`yarn build && node dist/index.js -o example/sprite.svg ${args}`, async error => {
 			if (error) {
 				return onError(error);
 			}
@@ -21,7 +21,7 @@ const command = async (args: string): Promise<ElementNode | ExecException> =>
 
 test('Create SVG sprite with default settings', async (t: Test) => {
 	const symbols = await readdir(resolve('assets'));
-	const result = await command('').catch(e => e);
+	const result = await command('-i assets').catch(e => e);
 
 	if ('code' in result) {
 		t.fail(`An error occurred: ${result.message}`);
@@ -46,7 +46,7 @@ test('Create SVG sprite with default settings', async (t: Test) => {
 
 test('Create SVG sprite with no attributes and no style', async (t: Test) => {
 	const symbols = await readdir(resolve('assets'));
-	const result = await command('-p svg- -a "" -s ""');
+	const result = await command('-i assets -p svg- -a "" -s ""');
 
 	if ('code' in result) {
 		t.fail(`An error occurred: ${result.message}`);
@@ -74,7 +74,7 @@ test('Create SVG sprite with no attributes and no style', async (t: Test) => {
 test('Create SVG sprite with custom attributes and custom style', async (t: Test) => {
 	const attrs = 'aria-label="SVGSymbolSprite" data-svg-sprite="true"';
 	const symbols = await readdir(resolve('assets'));
-	const result = await command(`-p svg- -a ${attrs} -s "display: none;"`);
+	const result = await command(`-i assets -p svg- -a ${attrs} -s "display: none;"`);
 
 	if ('code' in result) {
 		t.fail(`An error occurred: ${result.message}`);
@@ -95,6 +95,54 @@ test('Create SVG sprite with custom attributes and custom style', async (t: Test
 			const name = symbols[i].split('.')[0];
 
 			t.equal(id, `svg-${name}`, `The ID of the ${name} icon is set correctly`);
+		}
+	}
+});
+
+test('Create SVG sprite with no attributes and no style', async (t: Test) => {
+	const symbols = await readdir(resolve('assets'));
+	const result = await command('-i assets -p svg- -a "" -s ""');
+
+	if ('code' in result) {
+		t.fail(`An error occurred: ${result.message}`);
+
+		return;
+	} else {
+		const { children, properties } = result as ElementNode;
+
+		t.equal(properties?.xmlns, undefined, 'Should have no default namespace SVG');
+
+		t.equal(properties?.['aria-hidden'], undefined, 'Should have no "aria-hidden" attribute');
+
+		t.equal(properties?.style, '', 'Should have an empty "style" attribute');
+
+		for (let i = 0; i < children.length; i++) {
+			const child = children[i] as ElementNode;
+			const id = child.properties?.id as string | undefined;
+			const name = symbols[i].split('.')[0];
+
+			t.equal(id, `svg-${name}`, `The ID of the ${name} icon is set correctly`);
+		}
+	}
+});
+
+test('Create SVG sprite with no SVGO files optimization', async (t: Test) => {
+	const result = await command('-i assets2 -c false');
+
+	if ('code' in result) {
+		t.fail(`An error occurred: ${result.message}`);
+
+		return;
+	} else {
+		const { children } = result as ElementNode;
+
+		for (const child of children) {
+			['title', 'desc', 'metadata', 'defs', 'path', 'g', 'use'].forEach((el: string) => {
+				t.assert(
+					(child as ElementNode).children.find(item => (item as ElementNode).tagName === el),
+					`${el} exists as a child of the sprite`
+				);
+			});
 		}
 	}
 });

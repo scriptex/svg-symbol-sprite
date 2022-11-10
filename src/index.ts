@@ -25,7 +25,7 @@ cli.option('-i, --input [input]', 'Specifies input dir (current dir by default)'
 	.option('-o, --output [output]', 'Specifies output file ("./sprite.svg" by default)', 'sprite.svg')
 	.option('-v, --viewbox [viewbox]', 'Specifies viewBox attribute (parsed by default)', '')
 	.option('-p, --prefix [prefix]', 'Specifies prefix for id attribute ("icon-" by default)', 'icon-')
-	.option('-c, --config [config]', 'Absolute path to the SVGO config file', './config/svgo.config.js')
+	.option('-c, --config [config]', 'Absolute path to the SVGO config file or "false"', './config/svgo.config.js')
 	.option('-a, --attrs [attributes]', 'Attributes for the SVG element', SVG_PROPS)
 	.option('-s, --style [style]', 'Inline style for the SVG element', SVG_STYLE)
 	.parse(process.argv);
@@ -84,6 +84,10 @@ const onError = (err: Error) => {
 removeOutput()
 	.then(readSrcFolder)
 	.then(async (files: string[]) => {
+		if (CONFIG === 'false') {
+			return processFiles(files);
+		}
+
 		let svgoConfig = await loadConfig(DEFAULT_CONFIG);
 
 		try {
