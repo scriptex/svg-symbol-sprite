@@ -42,13 +42,15 @@ yarn global add svg-symbol-sprite
 
 ## Options
 
-| Argument          | Description                                            |
-| ----------------- | ------------------------------------------------------ |
-| `-i`, `--input`   | Specifies input dir (current dir by default)           |
-| `-o`, `--output`  | Specifies output file ("./sprite.svg" by default)      |
-| `-v`, `--viewbox` | Specifies viewBox attribute (parsed by default)        |
-| `-p`, `--prefix`  | Specifies prefix for id attribute ("icon-" by default) |
-| `-c`, `--config`  | Absolute path to the SVGO config file                  |
+| Argument          | Description                                      | Default value                              |
+| ----------------- | ------------------------------------------------ | ------------------------------------------ |
+| `-i`, `--input`   | Specifies input dir                              | "." (current directory)                    |
+| `-o`, `--output`  | Specifies output file                            | "./sprite.svg"                             |
+| `-v`, `--viewbox` | Specifies viewBox attribute                      | (parsed from each icon)                    |
+| `-p`, `--prefix`  | Specifies prefix for id attribute                | "icon-"                                    |
+| `-c`, `--config`  | Absolute path to the SVGO config file or "false" | -                                          |
+| `-a`, `--attrs`   | Attributes for the SVG element                   | "aria-hidden="true""                       |
+| `-s`, `--style`   | Inline style for the SVG element                 | "width: 0; height: 0; position: absolute;" |
 
 ```sh
 Usage: svg-symbol-sprite [options]
@@ -58,7 +60,9 @@ Options:
     -o, --output    Specifies output file ("./sprite.svg" by default)
     -v, --viewbox   Specifies viewBox attribute (parsed by default)
     -p, --prefix    Specifies prefix for id attribute ("icon-" by default)
-    -c, --config    Absolute path to the SVGO config file
+    -c, --config    Absolute path to the SVGO config file or "false"
+    -a, --attrs     Attributes for the SVG element ('xmlns="http://www.w3.org/2000/svg" aria-hidden="true"' by default)
+    -s, --style     Inline style for the SVG element ("width: 0; height: 0; position: absolute;" by default)
 ```
 
 ## Usage as a package.json script
@@ -92,6 +96,8 @@ npx svg-symbol sprite -i ./assets/svgs -o ./dist/sprite.svg
 ## SVG Optimization
 
 `svg-symbol-sprite` optimizes the input SVG files using [SVGO](https://github.com/svg/svgo) and an opinionated configuration file. In order to customize the SVGO config, one can do so by using the `-c` or `--config` option and an absolute path to the SVGO config file.
+
+**If you wish to completely disable the SVGO files optimization, pass "false" to the `--config` option.**
 
 ## Accessibility
 
