@@ -38,4 +38,5 @@ yarn.lock
 
 !dist
 assets
+assets2
 example
