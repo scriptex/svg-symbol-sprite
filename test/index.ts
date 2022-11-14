@@ -59,7 +59,7 @@ test('Create SVG sprite with no attributes and no style', async (t: Test) => {
 
 		t.equal(properties?.['aria-hidden'], undefined, 'Should have no "aria-hidden" attribute');
 
-		t.equal(properties?.style, '', 'Should have an empty "style" attribute');
+		t.equal(properties?.style, undefined, 'Should have an empty "style" attribute');
 
 		for (let i = 0; i < children.length; i++) {
 			const child = children[i] as ElementNode;
@@ -114,7 +114,7 @@ test('Create SVG sprite with no attributes and no style', async (t: Test) => {
 
 		t.equal(properties?.['aria-hidden'], undefined, 'Should have no "aria-hidden" attribute');
 
-		t.equal(properties?.style, '', 'Should have an empty "style" attribute');
+		t.equal(properties?.style, undefined, 'Should have an empty "style" attribute');
 
 		for (let i = 0; i < children.length; i++) {
 			const child = children[i] as ElementNode;

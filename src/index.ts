@@ -48,9 +48,12 @@ const removeOutput = async () => (existsSync(OUTPUT) ? await rm(OUTPUT) : undefi
 const getSvgContent = (content: string) => getSvg(content).html();
 const readSrcFolder = () => readdir(INPUT);
 const writeDestFile = (content: string) => writeFile(OUTPUT, content, 'utf8');
-const getSpriteContent = (contents: string[]) => `<svg ${ATTRS} style="${STYLE}">${contents.join('')}</svg>`;
-// prettier-ignore
-const getSymbol = (content: string, attrs: Record<string, unknown>) => `<symbol${getAttributes(attrs)}>${getSvgContent(content)}</symbol>`;
+const getSpriteContent = (contents: string[]) => {
+	return `<${['svg', ATTRS, `style="${STYLE}"`].join(' ').replace('style=""', '').trim()}>${contents.join('')}</svg>`;
+};
+const getSymbol = (content: string, attrs: Record<string, unknown>) => {
+	return `<symbol${getAttributes(attrs)}>${getSvgContent(content)}</symbol>`;
+};
 
 const getAttributes = (attrs: Record<string, unknown>) =>
 	Object.keys(attrs).reduce((acc, key) => {

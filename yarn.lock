@@ -251,6 +251,18 @@
   dependencies:
     "@types/node" "*"
 
+"@types/css-tree@*":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@types/css-tree/-/css-tree-2.0.0.tgz#b5f940aae863899a5a628114d8bc526863937e0a"
+  integrity sha512-mY2sXRLBnUPMYw6mkOT+6dABeaNxAEKZz6scE9kQPNJx8fKe1fOsm8Honl7+xFYe6TKX8WNk2+7oMp2vBArJ9Q==
+
+"@types/csso@5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@types/csso/-/csso-5.0.0.tgz#e69f5c8d1fc99c4c7741ae65d3330deaff5d008e"
+  integrity sha512-EMrCTGpXRUsbFfZBzn2jcW6Sqg8kxWXkJcpvAGYSEzFqAJ2THDJSwiMeS2fPUw+0p6RQNT/n8F/skEc9hUBc0g==
+  dependencies:
+    "@types/css-tree" "*"
+
 "@types/http-cache-semantics@^4.0.1":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@types/http-cache-semantics/-/http-cache-semantics-4.0.1.tgz#0ea7b61496902b95890dc4c3a116b60cb8dae812"
@@ -538,9 +550,9 @@ cheerio@1.0.0-rc.12:
     parse5-htmlparser2-tree-adapter "^7.0.0"
 
 ci-info@^3.2.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-3.5.0.tgz#bfac2a29263de4c829d806b1ab478e35091e171f"
-  integrity sha512-yH4RezKOGlOhxkmhbeNuC4eYZKAUsEaGtBuBzDDP1eFUKiccDWzBABxBfOx31IDwDIXMTxWuwAxUGModvkbuVw==
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-3.6.1.tgz#7594f1c95cb7fdfddee7af95a13af7dbc67afdcf"
+  integrity sha512-up5ggbaDqOqJ4UqLKZ2naVkyqSJQgJi5lwD6b6mM748ysrghDBX0bx/qJTUHzw7zu6Mq4gycviSF5hJnwceD8w==
 
 cli-boxes@^3.0.0:
   version "3.0.0"
@@ -1724,9 +1736,9 @@ is-wsl@^2.2.0:
     is-docker "^2.0.0"
 
 is-yarn-global@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.yarnpkg.com/is-yarn-global/-/is-yarn-global-0.4.0.tgz#714d94453327db9ea98fbf1a0c5f2b88f59ddd5c"
-  integrity sha512-HneQBCrXGBy15QnaDfcn6OLoU8AQPAa0Qn0IeJR/QCo4E8dNZaGGwxpCwWyEBQC5QvFonP8d6t60iGpAHVAfNA==
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/is-yarn-global/-/is-yarn-global-0.4.1.tgz#b312d902b313f81e4eaf98b6361ba2b45cd694bb"
+  integrity sha512-/kppl+R+LO5VmhYSEWARUFjodS25D68gvj8W7z0I7OWhUla5xWu8KL6CtB2V0R6yqhnRgbcaREMr4EEM6htLPQ==
 
 isarray@0.0.1:
   version "0.0.1"
@@ -2670,10 +2682,10 @@ svg-parser@2.0.4:
   resolved "https://registry.yarnpkg.com/svg-parser/-/svg-parser-2.0.4.tgz#fdc2e29e13951736140b76cb122c8ee6630eb6b5"
   integrity sha512-e4hG1hRwoOdRb37cIMSgzNsxyzKfayW6VOflrwvR+/bzrkyxY/31WkbgnQpgtrNp1SdpJvpUAGTa/ZoiPNDuRQ==
 
-svgo@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/svgo/-/svgo-3.0.0.tgz#f1d0af463f746aae9dff53806cbcf935f3b39037"
-  integrity sha512-mSqPn6RDeNqJvCeqHERlfWJjd4crP/2PgFelil9WpTwC4D3okAUopPsH3lnEyl7ONXfDVyISOihDjO0uK8YVAA==
+svgo@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/svgo/-/svgo-3.0.1.tgz#873f3341d04a08980ad8366780e8d04143b9fc2c"
+  integrity sha512-6kiDrstRCmA600TySGBu4VNA/FdEriOv7PKQRDOyIaVYUNamWvDSZjgMsM+mB0r0y5T7S3P5DkZJSIBQ/9QEsg==
   dependencies:
     "@trysound/sax" "0.2.0"
     commander "^7.2.0"

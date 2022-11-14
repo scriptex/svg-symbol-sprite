@@ -41,10 +41,11 @@
 	"dependencies": {
 		"cheerio": "1.0.0-rc.12",
 		"commander": "9.4.1",
-		"svgo": "3.0.0"
+		"svgo": "3.0.1"
 	},
 	"devDependencies": {
 		"@types/cheerio": "0.22.31",
+		"@types/csso": "5.0.0",
 		"@types/node": "18.11.9",
 		"@types/svg-parser": "2.0.3",
 		"@types/tape": "4.13.2",
