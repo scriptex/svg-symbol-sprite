@@ -90,7 +90,7 @@ yarn svg-sprite
 The tool can be also used without installing it:
 
 ```sh
-npx svg-symbol sprite -i ./assets/svgs -o ./dist/sprite.svg
+npx svg-symbol-sprite -i ./assets/svgs -o ./dist/sprite.svg
 ```
 
 ## SVG Optimization
