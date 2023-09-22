@@ -51,7 +51,7 @@
 		"@types/tape": "5.6.1",
 		"release-it": "16.1.5",
 		"svg-parser": "2.0.4",
-		"tape": "5.6.6",
+		"tape": "5.7.0",
 		"ts-node": "10.9.1",
 		"tslib": "2.6.2",
 		"typescript": "5.2.2"

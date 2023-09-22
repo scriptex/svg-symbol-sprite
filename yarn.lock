@@ -393,7 +393,7 @@ array-buffer-byte-length@^1.0.0:
     call-bind "^1.0.2"
     is-array-buffer "^3.0.1"
 
-array.prototype.every@^1.1.4:
+array.prototype.every@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/array.prototype.every/-/array.prototype.every-1.1.5.tgz#f8ca86a1a82a91eb5173187ef68935dc47215922"
   integrity sha512-FfMQJ+/joFGXpRCltbzV3znaP5QxIhLFySo0fEPn3GuoYlud9LhknMCIxdYKC2qsM/6VHoSp6YGwe3EZXrEcwQ==
@@ -1273,7 +1273,7 @@ function.prototype.name@^1.1.6:
     es-abstract "^1.22.1"
     functions-have-names "^1.2.3"
 
-functions-have-names@^1.2.3:
+functions-have-names@^1.2.2, functions-have-names@^1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/functions-have-names/-/functions-have-names-1.2.3.tgz#0404fe4ee2ba2f607f0e0ec3c80bae994133b834"
   integrity sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==
@@ -2126,6 +2126,16 @@ minimist@^1.2.0, minimist@^1.2.8:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.8.tgz#c1a464e7693302e082a075cee0c057741ac4772c"
   integrity sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==
 
+mock-property@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/mock-property/-/mock-property-1.0.0.tgz#301518a59fb545312a407c8d1a861aba0357b4a6"
+  integrity sha512-imC60k5A55GPUU43PqczbubOyyxCudIgneACKzL3PKfsBk08dc1HgNNU8siQbEIAPPjVUhc+gb0v0ypZ/iP9pw==
+  dependencies:
+    functions-have-names "^1.2.2"
+    has "^1.0.3"
+    has-property-descriptors "^1.0.0"
+    isarray "^2.0.5"
+
 ms@2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
@@ -2808,7 +2818,7 @@ string-width@^6.1.0:
     emoji-regex "^10.2.1"
     strip-ansi "^7.0.1"
 
-string.prototype.trim@^1.2.7, string.prototype.trim@^1.2.8:
+string.prototype.trim@^1.2.8:
   version "1.2.8"
   resolved "https://registry.yarnpkg.com/string.prototype.trim/-/string.prototype.trim-1.2.8.tgz#f9ac6f8af4bd55ddfa8895e6aea92a96395393bd"
   integrity sha512-lfjY4HcixfQXOfaqCvcBuOIapyaroTXhbkfJN3gcB1OtyupngWK4sEET9Knd0cXd28kTUqu/kHoV4HKSJdnjiQ==
@@ -2907,14 +2917,14 @@ svgo@3.0.2:
     csso "^5.0.5"
     picocolors "^1.0.0"
 
-tape@5.6.6:
-  version "5.6.6"
-  resolved "https://registry.yarnpkg.com/tape/-/tape-5.6.6.tgz#dc555729d557184764a0d61130304d21977e4ca2"
-  integrity sha512-rGp2cZ3rfZ6QfTBm6yvohf8aXmDqPyzMKZwTMV12w4i+b/N2Adwlg8PlW8jLqWzlJUZhglyYaLOSrMt/ZlZkAA==
+tape@5.7.0:
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/tape/-/tape-5.7.0.tgz#7f31bf116159d3cdbc6f65baa11aaa025d34ccfc"
+  integrity sha512-6EZoHjMDUUhet8+k32w/9onULL1U8idXKvBCnZxuZF2iFe+tMYOsKo4bpCtXbTSngZmYBnkU08TMhJwsKaHhaw==
   dependencies:
     "@ljharb/resumer" "^0.0.1"
     "@ljharb/through" "^2.3.9"
-    array.prototype.every "^1.1.4"
+    array.prototype.every "^1.1.5"
     call-bind "^1.0.2"
     deep-equal "^2.2.2"
     defined "^1.0.1"
@@ -2927,12 +2937,13 @@ tape@5.6.6:
     inherits "^2.0.4"
     is-regex "^1.1.4"
     minimist "^1.2.8"
+    mock-property "^1.0.0"
     object-inspect "^1.12.3"
     object-is "^1.1.5"
     object-keys "^1.1.1"
     object.assign "^4.1.4"
     resolve "^2.0.0-next.4"
-    string.prototype.trim "^1.2.7"
+    string.prototype.trim "^1.2.8"
 
 titleize@^3.0.0:
   version "3.0.0"
