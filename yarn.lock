@@ -295,10 +295,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.6.5.tgz#4c6a79adf59a8e8193ac87a0e522605b16587258"
   integrity sha512-2qGq5LAOTh9izcc0+F+dToFigBWiK1phKPt7rNhOqJSr35y8rlIBjDwGtFSgAI6MGIhjwOVNSQZVdJsZJ2uR1w==
 
-"@types/svg-parser@2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@types/svg-parser/-/svg-parser-2.0.3.tgz#a840615540e96e3b5819a9ce31e077efadfdefe2"
-  integrity sha512-PKEmDmVWO8f4wwSZDHKHtdnYRM5NI4dCB0lawtUYpxfGhhuQ0qUky80qk6CR8SZhFrRcJmNnWOpN+8uh/X9qgg==
+"@types/svg-parser@2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@types/svg-parser/-/svg-parser-2.0.4.tgz#92e2479b68813261eea0799f1276d63a830731ad"
+  integrity sha512-X0Ji9m4wCrQCdvWSUUhsHqh5GnT1ffeqwCt69uEsdc4Nk/xiiZQMrZdxPdtEB8QTQFOY70m5LAEqaLt3N9alZA==
 
 "@types/tape@5.6.1":
   version "5.6.1"
