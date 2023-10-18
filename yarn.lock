@@ -309,10 +309,10 @@
   resolved "https://registry.yarnpkg.com/@types/svg-parser/-/svg-parser-2.0.5.tgz#d40eb7124b59961fc223cbba5f53fdc629987394"
   integrity sha512-TAMLKY/NBQxviEFdEiJrarnpPRmltbW6vFAZLzPvH25DamUy8H8EKceBEt86xMdRVDQY3V/8uaucslMbbgQfUg==
 
-"@types/tape@5.6.1":
-  version "5.6.1"
-  resolved "https://registry.yarnpkg.com/@types/tape/-/tape-5.6.1.tgz#3285ad2e5433f7672974330e8b1c8264962a1281"
-  integrity sha512-Rs3uJYjo+oAtF+X/icS75nIa/tnPmZEuFqxwZW456+PfM0gqyqDh4fU9Mp0msFkeeFzvLPp7F7nDfw1yYDLJVA==
+"@types/tape@5.6.3":
+  version "5.6.3"
+  resolved "https://registry.yarnpkg.com/@types/tape/-/tape-5.6.3.tgz#8252ae1e09d07f8470fb3c5bac8ae7acf6f514a0"
+  integrity sha512-xBqJhHnAw/eDJhSrL4wVbrVc9nQQKq97/jOExJHejzWnuut2qo8rx/xSx/YA4zeCO0+iC86Cti07Ahs8FhHRvQ==
   dependencies:
     "@types/node" "*"
     "@types/through" "*"
