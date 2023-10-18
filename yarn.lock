@@ -280,10 +280,10 @@
   resolved "https://registry.yarnpkg.com/@types/css-tree/-/css-tree-2.3.2.tgz#caf5579204b16ef09472af8001e8c4642652f101"
   integrity sha512-B5nF6h7xxpMLvZ1pzugAYUGj1aw4KgTpXZzOijkDMRzey4SlFi0jVWb3o0SS1CVSxyBciltVgjt67CwrgjmlWA==
 
-"@types/csso@5.0.1":
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/@types/csso/-/csso-5.0.1.tgz#7c65b1f8a3179f195993b3bdf74f5f9d23d18517"
-  integrity sha512-J8J8XeIjw9QD0D0rxuaiaSepaXn7Hu9h1AaSSrZiG4HssKnRg3+PyI90r0BpW10OIZsx8tW4ZXfYiAVJKGwsrQ==
+"@types/csso@5.0.2":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@types/csso/-/csso-5.0.2.tgz#d6c21386c13f70097a18567312791c8ca0f98e7a"
+  integrity sha512-4rX9xyR3Fk7hCbFvneunO74kfA6hgkc8vDW8LnzFrMHU+mqoMmsG7WtD1YAuHw/zhJHHQPfGxFf04Ypmnpyd5w==
   dependencies:
     "@types/css-tree" "*"
 
