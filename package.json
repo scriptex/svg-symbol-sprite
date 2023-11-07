@@ -44,7 +44,7 @@
 		"svgo": "3.0.2"
 	},
 	"devDependencies": {
-		"@types/cheerio": "0.22.33",
+		"@types/cheerio": "0.22.34",
 		"@types/csso": "5.0.2",
 		"@types/node": "20.8.10",
 		"@types/svg-parser": "2.0.5",
