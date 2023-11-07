@@ -304,10 +304,10 @@
   dependencies:
     undici-types "~5.26.4"
 
-"@types/svg-parser@2.0.5":
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/@types/svg-parser/-/svg-parser-2.0.5.tgz#d40eb7124b59961fc223cbba5f53fdc629987394"
-  integrity sha512-TAMLKY/NBQxviEFdEiJrarnpPRmltbW6vFAZLzPvH25DamUy8H8EKceBEt86xMdRVDQY3V/8uaucslMbbgQfUg==
+"@types/svg-parser@2.0.6":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@types/svg-parser/-/svg-parser-2.0.6.tgz#aad3fffb6058149701b0215f5b8ffb663f5c3130"
+  integrity sha512-xrXwOltwMcLrKy79rv4MoalnD82oYLyXAVeeSyrkvR7XdCH4i7YqLNQWxyZ8KPpawtQShiKOse+pmtLeSLtCfQ==
 
 "@types/tape@5.6.3":
   version "5.6.3"
