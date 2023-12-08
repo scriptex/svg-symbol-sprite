@@ -52,7 +52,7 @@
 		"release-it": "17.0.1",
 		"svg-parser": "2.0.4",
 		"tape": "5.7.2",
-		"ts-node": "10.9.1",
+		"ts-node": "10.9.2",
 		"tslib": "2.6.2",
 		"typescript": "5.3.3"
 	},
