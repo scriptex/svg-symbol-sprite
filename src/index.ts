@@ -5,7 +5,7 @@ import { join, extname, resolve, basename } from 'path';
 
 import { load } from 'cheerio';
 import { Command } from 'commander';
-import { optimize, loadConfig } from 'svgo';
+import { optimize, loadConfig, Config } from 'svgo';
 
 const { rm, readdir, readFile, writeFile } = fs;
 
@@ -30,6 +30,16 @@ cli.option('-i, --input [input]', 'Specifies input dir (current dir by default)'
 	.option('-s, --style [style]', 'Inline style for the SVG element', SVG_STYLE)
 	.parse(process.argv);
 
+type OptionValues = {
+	input: string;
+	output: string;
+	viewbox: string;
+	prefix: string;
+	config: string | 'false';
+	attrs: string;
+	style: string;
+};
+
 const {
 	input: INPUT,
 	output: OUTPUT,
@@ -38,12 +48,12 @@ const {
 	config: CONFIG,
 	attrs: ATTRS,
 	style: STYLE
-} = cli.opts();
+} = cli.opts<OptionValues>();
 
 const onEnd = (): void => console.log(`File ‘${OUTPUT}’ successfully generated.`);
 const getSvg = (content: string) => load(content, CHEERIO_OPTIONS)('svg').first();
 const filterFile = (file: string) => extname(file) === '.svg';
-const processFiles = (files: string[]) => Promise.all(files.filter(filterFile).map(processFile));
+const processFiles = (files: string[]) => Promise.all(files.map(processFile));
 const removeOutput = async () => (existsSync(OUTPUT) ? await rm(OUTPUT) : undefined);
 const getSvgContent = (content: string) => getSvg(content).html();
 const readSrcFolder = () => readdir(INPUT);
@@ -72,9 +82,11 @@ const wrapFile = (fileName: string, content: string) => {
 	return getSymbol(content, attrs);
 };
 
+const getName = (file: string) => basename(file, extname(file));
+
 const processFile = (file: string) => {
 	const path = resolve(INPUT, file);
-	const name = basename(file, extname(file));
+	const name = getName(file);
 	const wrapContent = wrapFile.bind(null, name);
 
 	return readFile(path, 'utf8').then(wrapContent);
@@ -87,11 +99,13 @@ const onError = (err: Error) => {
 removeOutput()
 	.then(readSrcFolder)
 	.then(async (files: string[]) => {
+		const matchingFiles = files.filter(filterFile);
+
 		if (CONFIG === 'false') {
-			return processFiles(files);
+			return processFiles(matchingFiles);
 		}
 
-		let svgoConfig = await loadConfig(DEFAULT_CONFIG);
+		let svgoConfig: Config = await loadConfig(DEFAULT_CONFIG);
 
 		try {
 			svgoConfig = await loadConfig(CONFIG);
@@ -99,15 +113,19 @@ removeOutput()
 			console.log('SVG Symbol Sprite: SVGO configuration file not found. Using default SVGO configuration.');
 		}
 
-		for (const file of files) {
+		const processedFiles = [];
+
+		for (const file of matchingFiles) {
 			const content = await fs.readFile(join(INPUT, file), {
 				encoding: 'utf-8'
 			});
+			const name = getName(file);
+			const optimizedSVG = optimize(content, svgoConfig).data;
 
-			optimize(content, svgoConfig);
+			processedFiles.push(wrapFile(name, optimizedSVG));
 		}
 
-		return processFiles(files);
+		return processedFiles;
 	})
 	.then(getSpriteContent)
 	.then(writeDestFile)

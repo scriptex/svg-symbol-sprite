@@ -1,34 +1,19 @@
+const { randomBytes } = require('node:crypto');
+
 module.exports = {
 	plugins: [
-		'cleanupAttrs',
-		'removeDoctype',
-		'removeXMLProcInst',
-		'removeComments',
-		'removeMetadata',
-		'removeUselessDefs',
-		'removeEditorsNSData',
-		'removeEmptyAttrs',
-		'removeEmptyText',
-		'removeEmptyContainers',
-		'cleanupEnableBackground',
-		'convertStyleToAttrs',
-		'removeUselessStrokeAndFill',
-		'removeDimensions',
-		'cleanupIds',
 		{
-			name: 'removeViewBox',
-			enabled: false
+			name: 'preset-default',
+			params: {
+				overrides: {
+					removeViewBox: false
+				}
+			}
 		},
 		{
 			name: 'prefixIds',
 			params: {
-				prefix: {
-					toString() {
-						this.counter = this.counter || 0;
-
-						return `svgo-viewbox-id-${this.counter++}`;
-					}
-				}
+				prefix: () => randomBytes(20).toString('hex').slice(0, 4)
 			}
 		}
 	]
