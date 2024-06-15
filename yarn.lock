@@ -60,7 +60,7 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@ljharb/resumer@^0.1.2":
+"@ljharb/resumer@^0.1.3":
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/@ljharb/resumer/-/resumer-0.1.3.tgz#5ef4a4958da1b4e71ffea8ef33499cc622672d89"
   integrity sha512-d+tsDgfkj9X5QTriqM4lKesCkMMJC3IrbPKHvayP00ELx2axdXvDfWkqjxrLXIzGcQzmj7VAUT1wopqARTvafw==
@@ -68,7 +68,7 @@
     "@ljharb/through" "^2.3.13"
     call-bind "^1.0.7"
 
-"@ljharb/through@^2.3.12", "@ljharb/through@^2.3.13":
+"@ljharb/through@^2.3.13":
   version "2.3.13"
   resolved "https://registry.yarnpkg.com/@ljharb/through/-/through-2.3.13.tgz#b7e4766e0b65aa82e529be945ab078de79874edc"
   integrity sha512-/gKJun8NNiWGZJkGzI/Ragc53cOdcLNdzjLaIa+GEjguQs0ulsurx8WN0jijdK9yPqDvziX995sMRLyLt1uZMQ==
@@ -395,7 +395,7 @@ array-buffer-byte-length@^1.0.0, array-buffer-byte-length@^1.0.1:
     call-bind "^1.0.5"
     is-array-buffer "^3.0.4"
 
-array.prototype.every@^1.1.5:
+array.prototype.every@^1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/array.prototype.every/-/array.prototype.every-1.1.6.tgz#1717b407d019913250317300d814a1b6660f10d7"
   integrity sha512-gNEqZD97w6bfQRNmHkFv7rNnGM+VWyHZT+h/rf9C+22owcXuENr66Lfo0phItpU5KoXW6Owb34q2+8MnSIZ57w==
@@ -2227,7 +2227,7 @@ object-inspect@^1.13.1:
   resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.13.1.tgz#b96c6109324ccfef6b12216a956ca4dc2ff94bc2"
   integrity sha512-5qoj1RUiKOMsCCNLV1CBiPYE10sziTsnmNxkAI/rZhiD63CF7IqdFGC/XzjWjpSgLf0LxXX3bDFIh0E18f6UhQ==
 
-object-is@^1.1.5:
+object-is@^1.1.5, object-is@^1.1.6:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/object-is/-/object-is-1.1.6.tgz#1a6a53aed2dd8f7e6775ff870bea58545956ab07"
   integrity sha512-F8cZ+KfGlSGi09lJT7/Nd6KJZ9ygtvYC0/UYYLI9nmQKLMnydpB9yvbv9K1uSkEu7FU9vYPmVwLg328tX+ot3Q==
@@ -2858,7 +2858,7 @@ string-width@^7.0.0:
     get-east-asian-width "^1.0.0"
     strip-ansi "^7.1.0"
 
-string.prototype.trim@^1.2.8, string.prototype.trim@^1.2.9:
+string.prototype.trim@^1.2.9:
   version "1.2.9"
   resolved "https://registry.yarnpkg.com/string.prototype.trim/-/string.prototype.trim-1.2.9.tgz#b6fa326d72d2c78b6df02f7759c73f8f6274faa4"
   integrity sha512-klHuCNxiMZ8MlsOihJhJEBJAiMVqU3Z2nEXWfWnIqjN0gEFS9J9+IxKozWWtQGcgoa1WUZzLjKPTr4ZHNFTFxw==
@@ -2959,14 +2959,14 @@ svgo@^3.0.0:
     csso "^5.0.5"
     picocolors "^1.0.0"
 
-tape@5.7.5:
-  version "5.7.5"
-  resolved "https://registry.yarnpkg.com/tape/-/tape-5.7.5.tgz#fa015b537507afe90067fb448ace738745bb1fd3"
-  integrity sha512-C5Gm1MR8ujZmNrsmOiHSkKFfY2thrnUrFw/fFtcva9FABbN7LrHuQPi3MTS0Z0i/SLfYSJtRIcJYDUpwPsQ8yA==
+tape@5.8.0:
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/tape/-/tape-5.8.0.tgz#bf33ddc66620d40ec99505a4ad7e5d55ba781a87"
+  integrity sha512-XqKNwGp9eUcFzPmtpNCiDMiW76caPieYdrkuX8aw2X1KBgmJSBTET0I3JANTbMJgOBpR4CF9RPIgkRM8Vsb+kQ==
   dependencies:
-    "@ljharb/resumer" "^0.1.2"
-    "@ljharb/through" "^2.3.12"
-    array.prototype.every "^1.1.5"
+    "@ljharb/resumer" "^0.1.3"
+    "@ljharb/through" "^2.3.13"
+    array.prototype.every "^1.1.6"
     call-bind "^1.0.7"
     deep-equal "^2.2.3"
     defined "^1.0.1"
@@ -2975,17 +2975,17 @@ tape@5.7.5:
     get-package-type "^0.1.0"
     glob "^7.2.3"
     has-dynamic-import "^2.1.0"
-    hasown "^2.0.1"
+    hasown "^2.0.2"
     inherits "^2.0.4"
     is-regex "^1.1.4"
     minimist "^1.2.8"
     mock-property "^1.0.3"
     object-inspect "^1.13.1"
-    object-is "^1.1.5"
+    object-is "^1.1.6"
     object-keys "^1.1.1"
     object.assign "^4.1.5"
     resolve "^2.0.0-next.5"
-    string.prototype.trim "^1.2.8"
+    string.prototype.trim "^1.2.9"
 
 tmp@^0.0.33:
   version "0.0.33"
