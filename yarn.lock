@@ -285,13 +285,14 @@
   resolved "https://registry.yarnpkg.com/@types/svg-parser/-/svg-parser-2.0.6.tgz#aad3fffb6058149701b0215f5b8ffb663f5c3130"
   integrity sha512-xrXwOltwMcLrKy79rv4MoalnD82oYLyXAVeeSyrkvR7XdCH4i7YqLNQWxyZ8KPpawtQShiKOse+pmtLeSLtCfQ==
 
-"@types/tape@5.6.5":
-  version "5.6.5"
-  resolved "https://registry.yarnpkg.com/@types/tape/-/tape-5.6.5.tgz#61b23416b1517ece0eb46420a9f2787379fa42f9"
-  integrity sha512-/Eer3ugx8wLoJ4FFD2QzAO2RjuAys60WzvnVhOREHg+EGazbae9N095pLPGhDRErBkngl8YjZ1hApQ79UHraaQ==
+"@types/tape@5.7.0":
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@types/tape/-/tape-5.7.0.tgz#c7d8143fa5810d29f5bd8db8b3fa89535f9725f0"
+  integrity sha512-P6R12Ycyfft/M1PSOBaJtDdiFq5TxDST+DTMRKXm78gHFR8VideyKQ7mgvffxylJQAKtt3Mywa2Bmj8ZdpMLEg==
   dependencies:
     "@ljharb/through" "*"
     "@types/node" "*"
+    mock-property "*"
 
 acorn-walk@^8.1.1:
   version "8.3.2"
@@ -1954,7 +1955,7 @@ minimist@^1.2.0, minimist@^1.2.8:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.8.tgz#c1a464e7693302e082a075cee0c057741ac4772c"
   integrity sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==
 
-mock-property@^1.1.0:
+mock-property@*, mock-property@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/mock-property/-/mock-property-1.1.0.tgz#b38b9961476d2e54cde2033b62847b9546b3670d"
   integrity sha512-1/JjbLoGwv87xVsutkX0XJc0M0W4kb40cZl/K41xtTViBOD9JuFPKfyMNTrLJ/ivYAd0aPqu/vduamXO0emTFQ==
