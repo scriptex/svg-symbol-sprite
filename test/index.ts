@@ -72,9 +72,10 @@ test('Create SVG sprite with no attributes and no style', async (t: Test) => {
 });
 
 test('Create SVG sprite with custom attributes and custom style', async (t: Test) => {
-	const attrs = 'aria-label="SVGSymbolSprite" data-svg-sprite="true"';
 	const symbols = await readdir(resolve('assets'));
-	const result = await command(`-i assets -p svg- -a ${attrs} -s "display: none;"`);
+	const result = await command(
+		`-i assets -p svg- -a "aria-label='SVGSymbolSprite' data-svg-sprite='true'" -s "display: none;"`
+	);
 
 	if ('code' in result) {
 		t.fail(`An error occurred: ${result.message}`);
