@@ -394,10 +394,17 @@
   dependencies:
     "@types/css-tree" "*"
 
-"@types/node@*", "@types/node@22.10.5":
+"@types/node@*":
   version "22.10.5"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-22.10.5.tgz#95af89a3fb74a2bb41ef9927f206e6472026e48b"
   integrity sha512-F8Q+SeGimwOo86fiovQh8qiXfFEh2/ocYv7tU5pJ3EXMSSxk1Joj5wefpFK2fHTf/N6HKGSxIDBT9f3gCxXPkQ==
+  dependencies:
+    undici-types "~6.20.0"
+
+"@types/node@22.10.7":
+  version "22.10.7"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.10.7.tgz#14a1ca33fd0ebdd9d63593ed8d3fbc882a6d28d7"
+  integrity sha512-V09KvXxFiutGp6B7XkpaDXlNadZxrzajcY50EuoLIpQ6WWYCSvf19lVIazzfIzQvhUN2HjX12spLojTnhuKlGg==
   dependencies:
     undici-types "~6.20.0"
 
@@ -411,10 +418,10 @@
   resolved "https://registry.yarnpkg.com/@types/svg-parser/-/svg-parser-2.0.6.tgz#aad3fffb6058149701b0215f5b8ffb663f5c3130"
   integrity sha512-xrXwOltwMcLrKy79rv4MoalnD82oYLyXAVeeSyrkvR7XdCH4i7YqLNQWxyZ8KPpawtQShiKOse+pmtLeSLtCfQ==
 
-"@types/tape@5.8.0":
-  version "5.8.0"
-  resolved "https://registry.yarnpkg.com/@types/tape/-/tape-5.8.0.tgz#42bd112d81f53f79548d36f838431678065f58f2"
-  integrity sha512-UK1ChHa29Udnlcrv5MPjm6OvFFntZZyt+fXGsJ1CdvcYI8xfzxLJwGmELCe9xKrQJ6JD52QCSSZrirZFO9S+lQ==
+"@types/tape@5.8.1":
+  version "5.8.1"
+  resolved "https://registry.yarnpkg.com/@types/tape/-/tape-5.8.1.tgz#9c9540ee1d426a4512332e11ddf40100b6d6e8ef"
+  integrity sha512-vRjK+E1c+I4WRDSXcYfgepPjz2Knh+gulU3359LrR9H2KM8AyiMbNmX7W5aMlw7JFoXMpVOhq3bEIm78qakGbQ==
   dependencies:
     "@ljharb/through" "*"
     "@types/node" "*"
@@ -2945,10 +2952,10 @@ typed-array-length@^1.0.7:
     possible-typed-array-names "^1.0.0"
     reflect.getprototypeof "^1.0.6"
 
-typescript@5.7.2:
-  version "5.7.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.7.2.tgz#3169cf8c4c8a828cde53ba9ecb3d2b1d5dd67be6"
-  integrity sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==
+typescript@5.7.3:
+  version "5.7.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.7.3.tgz#919b44a7dbb8583a9b856d162be24a54bf80073e"
+  integrity sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==
 
 unbox-primitive@^1.1.0:
   version "1.1.0"
