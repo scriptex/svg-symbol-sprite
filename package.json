@@ -40,13 +40,13 @@
 	},
 	"dependencies": {
 		"cheerio": "1.0.0",
-		"commander": "13.0.0",
+		"commander": "13.1.0",
 		"svgo": "^3.0.0"
 	},
 	"devDependencies": {
 		"@types/cheerio": "0.22.35",
 		"@types/csso": "5.0.4",
-		"@types/node": "22.10.10",
+		"@types/node": "22.13.0",
 		"@types/svg-parser": "2.0.6",
 		"@types/tape": "5.8.1",
 		"release-it": "18.1.2",
