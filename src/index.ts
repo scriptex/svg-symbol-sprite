@@ -3,7 +3,7 @@
 import { existsSync, promises as fs } from 'fs';
 import { join, extname, resolve, basename } from 'path';
 
-import { load } from 'cheerio';
+import * as cheerio from 'cheerio';
 import { Command } from 'commander';
 import { optimize, loadConfig, Config } from 'svgo';
 
@@ -15,10 +15,11 @@ const SVG_PROPS = 'xmlns="http://www.w3.org/2000/svg" aria-hidden="true"';
 const SVG_STYLE = 'width: 0; height: 0; position: absolute;';
 const DEFAULT_CONFIG = join(__dirname, '..', 'config', 'svgo.config.js');
 
-const CHEERIO_OPTIONS = {
-	lowerCaseTags: true,
-	lowerCaseAttributeNames: true,
-	_useHtmlParser2: true
+const CHEERIO_OPTIONS: cheerio.CheerioOptions = {
+	xml: {
+		lowerCaseTags: true,
+		lowerCaseAttributeNames: true
+	}
 };
 
 cli.option('-i, --input [input]', 'Specifies input dir (current dir by default)', '.')
@@ -51,7 +52,7 @@ const {
 } = cli.opts<OptionValues>();
 
 const onEnd = (): void => console.log(`File ‘${OUTPUT}’ successfully generated.`);
-const getSvg = (content: string) => load(content, CHEERIO_OPTIONS)('svg').first();
+const getSvg = (content: string) => cheerio.load(content, CHEERIO_OPTIONS)('svg').first();
 const filterFile = (file: string) => extname(file) === '.svg';
 const processFiles = (files: string[]) => Promise.all(files.map(processFile));
 const removeOutput = async () => (existsSync(OUTPUT) ? await rm(OUTPUT) : undefined);
