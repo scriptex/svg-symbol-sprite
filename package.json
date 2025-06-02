@@ -58,7 +58,7 @@
 	},
 	"peerDependencies": {
 		"cheerio": "*",
-		"commander": "^12 || ^ 13",
+		"commander": "^12 || ^ 13 || ^14.0.0",
 		"svgo": "^3.0.0"
 	},
 	"release-it": {
