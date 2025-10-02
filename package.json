@@ -46,15 +46,15 @@
 	"devDependencies": {
 		"@types/cheerio": "1.0.0",
 		"@types/csso": "5.0.4",
-		"@types/node": "22.18.4",
+		"@types/node": "22.18.8",
 		"@types/svg-parser": "2.0.6",
 		"@types/tape": "5.8.1",
-		"release-it": "19.0.4",
+		"release-it": "19.0.5",
 		"svg-parser": "2.0.4",
 		"tape": "5.9.0",
 		"ts-node": "10.9.2",
 		"tslib": "2.8.1",
-		"typescript": "5.9.2"
+		"typescript": "5.9.3"
 	},
 	"peerDependencies": {
 		"cheerio": "*",
