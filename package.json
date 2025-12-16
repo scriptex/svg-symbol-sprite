@@ -46,7 +46,7 @@
 	"devDependencies": {
 		"@types/cheerio": "1.0.0",
 		"@types/csso": "5.0.4",
-		"@types/node": "24.10.1",
+		"@types/node": "24.10.4",
 		"@types/svg-parser": "2.0.6",
 		"@types/tape": "5.8.1",
 		"release-it": "19.0.6",
