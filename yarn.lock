@@ -344,10 +344,10 @@
   dependencies:
     undici-types "~6.21.0"
 
-"@types/node@24.10.4":
-  version "24.10.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.10.4.tgz#9d27c032a1b2c42a4eab8fb65c5856a8b8e098c4"
-  integrity sha512-vnDVpYPMzs4wunl27jHrfmwojOGKya0xyM3sH+UE5iv5uPS6vX7UIoh6m+vQc5LGBq52HBKPIn/zcSZVzeDEZg==
+"@types/node@24.10.9":
+  version "24.10.9"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-24.10.9.tgz#1aeb5142e4a92957489cac12b07f9c7fe26057d0"
+  integrity sha512-ne4A0IpG3+2ETuREInjPNhUGis1SFjv1d5asp8MzEAGtOZeTeHVDOYqOgqfhvseqg/iXty2hjBf1zAOb7RNiNw==
   dependencies:
     undici-types "~7.16.0"
 
@@ -2112,10 +2112,10 @@ regexp.prototype.flags@^1.5.1, regexp.prototype.flags@^1.5.3:
     gopd "^1.2.0"
     set-function-name "^2.0.2"
 
-release-it@19.2.2:
-  version "19.2.2"
-  resolved "https://registry.yarnpkg.com/release-it/-/release-it-19.2.2.tgz#8709c937c433eb5499f7d65add1bc8f183096e27"
-  integrity sha512-57TBUTBbBXLJsPufYS+Hsb1dSZKZ0ktiYgPkNc3Pmlq/QQtH9X0oD0SG2ib5CsXHTI11m19pyK60NXmvtE6cLg==
+release-it@19.2.3:
+  version "19.2.3"
+  resolved "https://registry.yarnpkg.com/release-it/-/release-it-19.2.3.tgz#af2e96752bfcf4d0c08f53e4928e3493b54c618d"
+  integrity sha512-GTSfrKb0cPmssEFliX0+WQBHC6NiDsMR/M8Y2tkvct/TO36BjB5XV6LO5BUTYV12C3+f78Y8aroku7jCyNiDeA==
   dependencies:
     "@nodeutils/defaults-deep" "1.1.0"
     "@octokit/rest" "22.0.1"
