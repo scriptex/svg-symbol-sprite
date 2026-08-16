@@ -316,17 +316,17 @@
   dependencies:
     cheerio "*"
 
-"@types/css-tree@*":
-  version "2.3.10"
-  resolved "https://registry.yarnpkg.com/@types/css-tree/-/css-tree-2.3.10.tgz#b96abb37c1b51b03fe16054c186130c6ab69fef7"
-  integrity sha512-WcaBazJ84RxABvRttQjjFWgTcHvZR9jGr0Y3hccPkHjFyk/a3N8EuxjKr+QfrwjoM5b1yI1Uj1i7EzOAAwBwag==
+"@types/css-tree@^2":
+  version "2.3.11"
+  resolved "https://registry.yarnpkg.com/@types/css-tree/-/css-tree-2.3.11.tgz#c9457a54fe8ea02d2d72ddc864c1b9c5625f10d0"
+  integrity sha512-aEokibJOI77uIlqoBOkVbaQGC9zII0A+JH1kcTNKW2CwyYWD8KM6qdo+4c77wD3wZOQfJuNWAr9M4hdk+YhDIg==
 
-"@types/csso@5.0.4":
-  version "5.0.4"
-  resolved "https://registry.yarnpkg.com/@types/csso/-/csso-5.0.4.tgz#5e0c0352a3921117887ff032ea04c1f10b8b7f84"
-  integrity sha512-W/FsRkm/9c04x9ON+bj+HQ0cSgNkG1LvcfuBCpkP7cpikM7+RkrNFLGtiofb++xBG6KGMUycLoDbi9/K621ZCw==
+"@types/csso@5.0.5":
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/@types/csso/-/csso-5.0.5.tgz#314345e043c3879e8af8fe2c4b62927f9e560c65"
+  integrity sha512-Et/B3W1/1XMjG9SxwitiokWDabA9N8otVoTBJF2RmZ8itU0c5h7qmuZcTpp17BqfAnsdfkGQ3hwizff3nJvWSQ==
   dependencies:
-    "@types/css-tree" "*"
+    "@types/css-tree" "^2"
 
 "@types/node@*":
   version "22.15.19"
@@ -2107,10 +2107,10 @@ regexp.prototype.flags@^1.5.1, regexp.prototype.flags@^1.5.3, regexp.prototype.f
     gopd "^1.2.0"
     set-function-name "^2.0.2"
 
-release-it@21.0.1:
-  version "21.0.1"
-  resolved "https://registry.yarnpkg.com/release-it/-/release-it-21.0.1.tgz#17c755982b5c2ba6aa45396f192541ffcf7c870f"
-  integrity sha512-xbPuv2tau3gb0Xw0NVqV3QjOhytFvbsBZDqzmURqlwtgNpFIlIbpDbuZG64ptytFOX4H/7k65bbPSLTwAL34/g==
+release-it@21.0.2:
+  version "21.0.2"
+  resolved "https://registry.yarnpkg.com/release-it/-/release-it-21.0.2.tgz#48e1326e89bb54ca717489e35121574e1718a4be"
+  integrity sha512-QwyDnWiQNB4d8Hc2b5FLMHcsKz9S2O1dMNnPB7w+0knsL5r8+qbnznDA1X7Bw5D863+Ud7eRHc71Cfth5Tlrgg==
   dependencies:
     "@inquirer/prompts" "8.5.2"
     "@octokit/rest" "22.0.1"
