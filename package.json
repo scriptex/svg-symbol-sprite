@@ -40,7 +40,7 @@
 	},
 	"dependencies": {
 		"cheerio": "1.2.0",
-		"commander": "15.0.0",
+		"commander": "15.1.0",
 		"svgo": "^4.0.0"
 	},
 	"devDependencies": {
